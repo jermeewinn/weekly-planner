@@ -1,4 +1,3 @@
-// var dayjs = require('dayjs');
 var currentDayEl = $('#currentDay'); 
 var timeBlockEl = $('.time-block');
 var saveButtonEl = $('.saveBtn');
@@ -26,12 +25,9 @@ function weeklyPlanner() {
         if (currHr < currBlock) {
             $(this).children('textarea').addClass('future');
         }
-        
     });
     saveButtonEl.on('click', updatePlanner);
-
 };    
-
 
 function updatePlanner(event) {
     var checkHr = $(this).parent().attr('data-id');
