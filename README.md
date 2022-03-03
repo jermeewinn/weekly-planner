@@ -11,6 +11,7 @@ The purpose of this challenge was to build out an app's stylings and back-end fu
 - moment.js
 
 ## Deployed Link:
+https://jermeewinn.github.io/weekly-planner/
 
 ## Screenshot of the App:
 
