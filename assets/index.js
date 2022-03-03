@@ -7,12 +7,12 @@
 
 //ALSO NOTE TO SELF:
 //# is used for querying IDs
-var dayjs = require('dayjs');
+// var dayjs = require('dayjs');
 var currentDayEl = $('#currentDay'); 
 var timeBlockEl = $('.time-block');
 var saveButtonEl = $('.saveBtn');
-var currDate = dayjs().format('MMM/DD/YYYY');
-var currHr = dayjs().hour('h');
+var currDate = moment().format('MMM/DD/YYYY');
+var currHr = moment().hour('H');
 
 function weeklyPlanner() {
     timeBlockEl.each( function() {
@@ -35,9 +35,15 @@ function weeklyPlanner() {
             $(this).children('textarea').addClass('future');
         }
     });
-    
+    saveButtonEl.on('click', updatePlanner);
 
 };    
+
+function updatePlanner(event) {
+    var checkHr = $(this).parent().attr('data-id');
+    var updatePlan = $(this).siblings('.description').val();
+    localStorage.setItem(checkHr, updatePlan)
+};
 
 $(document).ready( () => {
     weeklyPlanner();
