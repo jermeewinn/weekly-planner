@@ -14,4 +14,33 @@ var saveButtonEl = $('.saveBtn');
 var currDate = dayjs().format('MMM/DD/YYYY');
 var currHr = dayjs().hour('h');
 
-function
+function weeklyPlanner() {
+    timeBlockEl.each( function() {
+        //get the current block of time
+        var currBlock = parseInt($(this).attr('data-id'));
+        //get input from localStorage
+        $(this).children('.description').val(localStorage.getItem(currBlock));
+        //check to see if present, color will be red
+        if (currHr == currBlock) {
+            $(this).children('textarea').addClass('present');
+        }
+
+        //check to see if past, color will be gray
+        if (currHr > currBlock) {
+            $(this).children('textarea').addClass('past');
+        }
+
+        //check to see if future, color will be green
+        if (currHr > currBlock) {
+            $(this).children('textarea').addClass('future');
+        }
+    });
+    
+
+};    
+
+$(document).ready( () => {
+    weeklyPlanner();
+    currentDayEl.innerHTML = currDate;
+    currentDayEl.append(currDate);
+});
