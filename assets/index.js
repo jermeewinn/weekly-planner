@@ -2,11 +2,12 @@
 var currentDayEl = $('#currentDay'); 
 var timeBlockEl = $('.time-block');
 var saveButtonEl = $('.saveBtn');
-var currDate = moment().format('MMMM Do YYYY');
+var currDate = moment().format('MMMM Do, YYYY');
 var currHr = moment().hour('H');
 
 function weeklyPlanner() {
     timeBlockEl.each( function() {
+        
         //get the current block of time
         var currBlock = parseInt($(this).attr('data-id'));
         //get input from localStorage
@@ -15,7 +16,7 @@ function weeklyPlanner() {
         if (currHr == currBlock) {
             $(this).children('textarea').addClass('present');
         }
-
+        console.log(currHr);
         //check to see if past, color will be gray
         if (currHr > currBlock) {
             $(this).children('textarea').addClass('past');
@@ -25,6 +26,7 @@ function weeklyPlanner() {
         if (currHr < currBlock) {
             $(this).children('textarea').addClass('future');
         }
+        
     });
     saveButtonEl.on('click', updatePlanner);
 
