@@ -3,7 +3,7 @@ var currentDayEl = $('#currentDay');
 var timeBlockEl = $('.time-block');
 var saveButtonEl = $('.saveBtn');
 var currDate = moment().format('MMMM Do YYYY');
-var currHr = moment().hour('h');
+var currHr = moment().hour('H');
 
 function weeklyPlanner() {
     timeBlockEl.each( function() {
@@ -22,7 +22,7 @@ function weeklyPlanner() {
         }
 
         //check to see if future, color will be green
-        if (currHr > currBlock) {
+        if (currHr < currBlock) {
             $(this).children('textarea').addClass('future');
         }
     });
