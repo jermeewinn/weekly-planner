@@ -32,6 +32,7 @@ function weeklyPlanner() {
 
 };    
 
+
 function updatePlanner(event) {
     var checkHr = $(this).parent().attr('data-id');
     var updatePlan = $(this).siblings('.description').val();
