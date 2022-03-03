@@ -16,7 +16,7 @@ function weeklyPlanner() {
         if (currHr == currBlock) {
             $(this).children('textarea').addClass('present');
         }
-        console.log(currHr);
+
         //check to see if past, color will be gray
         if (currHr > currBlock) {
             $(this).children('textarea').addClass('past');
