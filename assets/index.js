@@ -11,8 +11,8 @@
 var currentDayEl = $('#currentDay'); 
 var timeBlockEl = $('.time-block');
 var saveButtonEl = $('.saveBtn');
-var currDate = moment().format('MMM/DD/YYYY');
-var currHr = moment().hour('H');
+var currDate = moment().format('MMMM do YYYY h:mm:ss a');
+var currHr = moment().hour('h');
 
 function weeklyPlanner() {
     timeBlockEl.each( function() {
