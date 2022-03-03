@@ -1,0 +1,1 @@
+var presentDayEl = $("#presentDayEl");
