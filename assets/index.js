@@ -11,5 +11,7 @@ var dayjs = require('dayjs');
 var currentDayEl = $('#currentDay'); 
 var timeBlockEl = $('.time-block');
 var saveButtonEl = $('.saveBtn');
-var currDate = dayjs().date();
-var currHr = dayjs().hour('H');
+var currDate = dayjs().format('MMM/DD/YYYY');
+var currHr = dayjs().hour('h');
+
+function
